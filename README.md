@@ -1,37 +1,34 @@
-Slamtec RPLIDAR Public SDK for C++
-==================================
+# rplidar-sdk
 
-Introduction
-------------
+A copy of the [Slamtec RPLIDAR Public SDK](https://github.com/Slamtec/rplidar_sdk) for C++: the driver library plus demo applications for the RPLIDAR A1, A2, A3, S1, S2, S3, C1 and T1 sensors.
+
+**Note:** This repository is archived and read-only.
+
+---
+
+## Introduction
 
 Slamtec RPLIDAR(https://www.slamtec.com) series is a set of high-performance and low-cost LIDAR(https://en.wikipedia.org/wiki/Lidar) sensors, which is the perfect sensor of 2D SLAM, 3D reconstruction, multi-touch, and safety applications.
 
-This is the public SDK of RPLIDAR products in C++, and open-sourced under GPLv3 license.
+This is the public SDK of RPLIDAR products in C++ (see License below).
 
 If you are using ROS (Robot Operating System), please use our open-source ROS node directly: https://github.com/slamtec/rplidar_ros .
 
 If you are just evaluating RPLIDAR, you can use Slamtec RoboStudio(https://www.slamtec.com/robostudio) (currently only support Windows and Android) to do the evaulation.
 
-License
--------
+## Release Notes
 
-The SDK itself is licensed under BSD 2-clause license.
-The demo applications are licensed under GPLv3 license.
+* [v2.1.0](docs/ReleaseNote.v2.1.0.md)
+* [v2.0.0](docs/ReleaseNote.v2.0.0.md)
+* [v1.12.0](docs/ReleaseNote.v1.12.0.md)
+* [v1.11.0](docs/ReleaseNote.v1.11.0.md)
+* [v1.10.0](docs/ReleaseNote.v1.10.0.md)
+* [v1.9.1](docs/ReleaseNote.v1.9.1.md)
+* [v1.9.0](docs/ReleaseNote.v1.9.0.md)
+* [v1.8.1](docs/ReleaseNote.v1.8.1.md)
+* [v1.8.0](docs/ReleaseNote.v1.8.0.md)
 
-Release Notes
--------------
-* [v2.1.0](https://github.com/slamtec/rplidar_sdk/blob/master/docs/ReleaseNote.v2.1.0.md)
-* [v2.0.0](https://github.com/Slamtec/rplidar_sdk/tree/feature/release-2.0/docs/ReleaseNote.v2.0.0.md)
-* [v1.12.0](https://github.com/slamtec/rplidar_sdk/blob/master/docs/ReleaseNote.v1.12.0.md)
-* [v1.11.0](https://github.com/slamtec/rplidar_sdk/blob/master/docs/ReleaseNote.v1.11.0.md)
-* [v1.10.0](https://github.com/slamtec/rplidar_sdk/blob/master/docs/ReleaseNote.v1.10.0.md)
-* [v1.9.1](https://github.com/slamtec/rplidar_sdk/blob/master/docs/ReleaseNote.v1.9.1.md)
-* [v1.9.0](https://github.com/slamtec/rplidar_sdk/blob/master/docs/ReleaseNote.v1.9.0.md)
-* [v1.8.1](https://github.com/slamtec/rplidar_sdk/blob/master/docs/ReleaseNote.v1.8.1.md)
-* [v1.8.0](https://github.com/slamtec/rplidar_sdk/blob/master/docs/ReleaseNote.v1.8.0.md)
-
-Supported Platforms
--------------------
+## Supported Platforms
 
 RPLIDAR SDK supports Windows, macOS and Linux by using Visual Studio 2010 and 2019 projects and Makefile.
 
@@ -46,8 +43,7 @@ RPLIDAR SDK supports Windows, macOS and Linux by using Visual Studio 2010 and 20
 | C1                     | Yes     | Yes   | Yes   |
 | T1                     | Yes     | Yes   | Yes   |
 
-Quick Start
------------
+## Quick Start
 
 ### On Windows
 
@@ -62,8 +58,7 @@ Please make sure you have make and g++ installed, and then just invoke make in t
 
 The Makefile compiles Release build by default, and you can also use `make DEBUG=1` to compile Debug builds.
 
-Cross Compile
--------------
+## Cross Compile
 
 The Makefile system used by RPLIDAR public SDK support cross compiling.
 
@@ -71,8 +66,7 @@ The following command can be used to cross compile the SDK for `arm-linux-gnueab
 
     CROSS_COMPILE_PREFIX=arm-linux-gnueabihf ./cross_compile.sh
 
-Demo Applications
------------------
+## Demo Applications
 
 RPLIDAR public SDK includes some simple demos to do fast evaulation:
 
@@ -99,8 +93,7 @@ This demo application can show real-time laser scans in the GUI and is only avai
 
 We have stopped the development of this demo application, please use Slamtec RoboStudio (https://www.slamtec.com/robostudio) instead.
 
-SDK Usage
----------
+## SDK Usage
 
 > For detailed documents of RPLIDAR SDK, please refer to our user manual: https://download.slamtec.com/api/download/rplidar-sdk-manual/1.0?lang=en
 
@@ -219,9 +212,12 @@ For example:
     float angle_in_degrees = node.angle_z_q14 * 90.f / (1 << 14);
     float distance_in_meters = node.dist_mm_q2 / 1000.f / (1 << 2);
 
-Contact Slamtec
----------------
+## Contact Slamtec
 
 If you have any extra questions, please feel free to contact us at our support email:
 
     support@slamtec.com
+
+## License
+
+The SDK itself is licensed under the BSD 2-clause license (see [LICENSE](LICENSE)). The demo applications are licensed under GPLv3.
